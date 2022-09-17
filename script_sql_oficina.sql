@@ -2,7 +2,7 @@ create database oficina;
 
 use oficina;
 
--- criar tabela cliente
+
 create table cliente(
 	idCliente int auto_increment primary key,
     Nome varchar(255) not null,
@@ -12,7 +12,6 @@ create table cliente(
     constraint unique_CPF unique (CPF)
 );
 
--- criar tabela veiculo
 create table veiculo(
 	idVeiculo int auto_increment primary key,
     Identificacao_veiculo varchar(45)not null,
@@ -20,13 +19,12 @@ create table veiculo(
     constraint fk_veiculo_cliente foreign key (idCliente) references cliente(idCliente)
 );
 
--- criar tabela Equipe Mecanicos
+
 create table equipeMecanicos(
 	idEquipeMecanicos int auto_increment primary key,
     servico varchar(45) not null
 );
 
--- criar tabela mecanico
 create table mecanico(
 	idMecanicos int auto_increment primary key,
     CodigoMecanico int not null,
@@ -37,19 +35,19 @@ create table mecanico(
     constraint fk_mecanico_equipe foreign key (EquipeMecanico) references equipeMecanicos(idEquipeMecanicos)
 );
 
--- criar tabela valor das peças
+
 create table valorPecas(
 	idValorPecas int auto_increment primary key,
     valorPecas varchar(255) not null
 );
 
--- criar tabela mao de obra
+
 create table maoObra(
 	idMaoObra int auto_increment primary key,
     ValorMaoObra varchar(255)
 );
 
--- criar tabela conserto e revisao
+
 create table consertoRevisao(
 	equipeMecanicos int,
     idVeiculo int,
@@ -66,7 +64,6 @@ create table consertoRevisao(
     constraint fk_conserto_pecas foreign key (idValorPecas) references valorPecas(idValorPecas)
 );
 
--- criar tabela autorizar ou negar
 create table autorizarNegar(
 	idAutorizarNegar int auto_increment primary key,
     autorizacao varchar(45),
@@ -80,7 +77,7 @@ create table autorizarNegar(
     constraint fk_autorizarnegar_equipe foreign key (idEquipeMecanicos) references equipeMecanicos(idEquipeMecanicos)
 );
 
--- criar tabela servico autorizado
+
 create table autorizado(
 	idAutorizado int auto_increment primary key,
     dataconclusao varchar(45) not null,
@@ -97,7 +94,7 @@ create table autorizado(
     constraint fk_autorizado_veiculo foreign key (idVeiculo) references veiculo(idVeiculo)
 );
 
--- inserção de dados
+
 insert into cliente(Nome, CPF, Telefone, Endereco) values
 	('cliente1','00000000001','00000000001','Rua 1'),
     ('cliente2','00000000002','00000000002','Rua 2'),
