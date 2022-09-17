@@ -1,0 +1,2 @@
+# Projeto-L-gico-de-BD-do-Zero
+Neste projeto foi construído um Projeto Lógico em um Banco de Dados do zero. Para isso foi preciso primeiro construir um mapa conceitual de uma oficina mecânica utilizando o SQL Workbench 8.0, que pode ser baixado em: https://www.mysql.com/downloads/ . Após essa etapa foi feito o script para assim concluir o projeto prosposto pelo Bootcamp Database Experience, ministrado por Juliana Mascarenhas, na plataforma DIO.me (https://dio.me/sign-up?ref=YACG3ZYDVX). O projeto pode ser melhorado e pretendo fazer atualizações, aceito recomendações.
