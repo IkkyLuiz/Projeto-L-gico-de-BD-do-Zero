@@ -5,10 +5,10 @@ use oficina;
 
 create table cliente(
 	idCliente int auto_increment primary key,
-    Nome varchar(255) not null,
+    Nome varchar(300) not null,
     CPF char(11) not null,
     Telefone varchar(11) not null,
-    Endereco varchar(255) not null,
+    Endereco varchar(300) not null,
     constraint unique_CPF unique (CPF)
 );
 
